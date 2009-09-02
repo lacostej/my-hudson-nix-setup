@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# Startup script for the Hudson Continuous Integration server
+#
+# chkconfig: 2345 85 15
+# description: Hudson Continuous Integration server
+# processname: hudson
+# pidfile: /var/run/hudson.pid
+
+HUDSON_DIR=/opt/hudson
+
+# See how we were called.
+case "$1" in
+  start)
+        su hudson -c "$HUDSON_DIR/start.sh"
+        ;;
+  stop)
+        su hudson -c "$HUDSON_DIR/stop.sh"
+        ;;
+  restart)
+        $0 stop
+        $0 start
+        ;;
+  *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+
+exit 0
+
