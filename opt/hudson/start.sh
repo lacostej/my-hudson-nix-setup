@@ -18,6 +18,7 @@ PATH="$JAVA_HOME/bin:/usr/local/bin:/usr/bin:/bin"
 JAVA_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8001,suspend=n"
 #JAVA_OPTS="-Dhttp.proxyHost=proxy -Dhttp.proxyPort=8080 -Dhttp.nonProxyHosts=\"*.edb.com|10.*\" $JAVA_OPTS"
 JAVA_OPTS="-Xmx1024m -XX:MaxPermSize=256m $JAVA_OPTS"
+JAVA_OPTS="-Dorg.apache.commons.jelly.tags.fmt.timeZone=\"Europe/Paris\" $JAVA_OPTS"
 #JAVA_OPTS="-Djava.awt.headless=true $JAVA_OPTS" 
 
 killall Xrealvnc; killall Xvnc; rm -fv /tmp/.X*-lock /tmp/.X11-unix/X*
